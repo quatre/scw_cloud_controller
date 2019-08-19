@@ -1,4 +1,4 @@
-FROM golang:1.12.7-alpine
+FROM golang:1.12.7
 
 WORKDIR /app/scw_cloud_controller
 COPY . .
