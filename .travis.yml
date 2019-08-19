@@ -1,0 +1,13 @@
+language: go
+go:
+  - 1.12.7
+  - master
+services:
+  - docker
+install:
+  - docker build -t scw_cloud_controller .
+script:
+  - docker run -ti scw_cloud_controller scw_cloud_controller --version
+branches:
+  only:
+    - master
