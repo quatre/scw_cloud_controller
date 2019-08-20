@@ -1,9 +1,9 @@
 FROM golang:1.12.7-alpine
 
 WORKDIR /app/scw_cloud_controller
-COPY . .
 RUN apk add --no-cache git
-RUN GOOS=linux go build -v .
+COPY . .
+RUN GOOS=linux go build -v -mod=vendor .
 
 FROM alpine:latest
 WORKDIR /bin
